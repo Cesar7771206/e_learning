@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - E-Learning</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">🎓 E-Learning</div>
+            <div class="nav-user">
+                <span id="userName"></span>
+                <button id="btnLogout" class="btn-logout">Salir</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <ul class="menu">
+                <li class="menu-item active" data-section="cursos">📚 Mis Cursos</li>
+                <li class="menu-item" data-section="todosCursos">📚 Todos los Cursos</li>
+                <li class="menu-item" data-section="tutorias">🗓️ Tutorías</li>
+                <li class="menu-item" data-section="tutores" id="tutoresMenu" style="display:none;">👨‍🏫 Tutores</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <!-- MIS CURSOS -->
+            <section id="cursosSection" class="content-section active">
+                <div class="section-header">
+                    <h1>Mis Cursos</h1>
+                    <p>Los cursos en los que estás inscrito</p>
+                </div>
+                <div id="cursosContainer" class="courses-grid"></div>
+            </section>
+
+            <!-- TODOS LOS CURSOS -->
+            <section id="todosCursosSection" class="content-section">
+                <div class="section-header">
+                    <h1>Todos los Cursos</h1>
+                    <p>Explora y únete a nuevos cursos</p>
+                </div>
+                <div id="todosCursosContainer" class="courses-grid"></div>
+            </section>
+
+            <!-- TUTORÍAS -->
+            <section id="tutoriasSection" class="content-section">
+                <div class="section-header">
+                    <h1>Mis Tutorías</h1>
+                    <p>Tus sesiones de tutoría programadas</p>
+                </div>
+                <div id="tutoriasContainer" class="tutorias-list"></div>
+            </section>
+
+            <!-- TUTORES -->
+            <section id="tutoresSection" class="content-section">
+                <div class="section-header">
+                    <h1>Tutores Disponibles</h1>
+                    <p>Encuentra un tutor para recibir ayuda personalizada</p>
+                </div>
+                <div id="tutoresContainer" class="tutores-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL PARA RESERVAR TUTORÍA -->
+    <div id="tutoriaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reservar Tutoría</h2>
+                <button class="btn-close" onclick="cerrarModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="tutor-info" id="tutorInfo"></div>
+                <form id="tutoriaForm">
+                    <div class="input-group">
+                        <label for="tutoriaCurso">Curso</label>
+                        <select id="tutoriaCurso" required></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="tutoriaFecha">Fecha y Hora</label>
+                        <input type="datetime-local" id="tutoriaFecha" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Reservar Tutoría</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

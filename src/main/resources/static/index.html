@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform - Login</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">🎓</div>
+                <h1>E-Learning Platform</h1>
+                <p>Aprende sin límites</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="login">Iniciar Sesión</button>
+                <button class="tab" data-tab="register">Registrarse</button>
+            </div>
+
+            <!-- FORMULARIO DE LOGIN -->
+            <form id="loginForm" class="form-container active">
+                <div class="alert" id="loginAlert" style="display: none;"></div>
+                
+                <div class="input-group">
+                    <label for="loginEmail">Correo Electrónico</label>
+                    <input type="email" id="loginEmail" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <span>Ingresar</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <form id="registerForm" class="form-container">
+                <div class="alert" id="registerAlert" style="display: none;"></div>
+                
+                <div class="input-group">
+                    <label for="registerName">Nombre Completo</label>
+                    <input type="text" id="registerName" placeholder="Juan Pérez" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerEmail">Correo Electrónico</label>
+                    <input type="email" id="registerEmail" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerPassword">Contraseña</label>
+                    <input type="password" id="registerPassword" placeholder="••••••••" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registerRole">Tipo de Usuario</label>
+                    <select id="registerRole" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="ESTUDIANTE">Estudiante</option>
+                        <option value="TUTOR">Tutor</option>
+                    </select>
+                </div>
+
+                <!-- Campos adicionales para ESTUDIANTE -->
+                <div id="studentFields" style="display: none;">
+                    <div class="input-group">
+                        <label for="carrera">Carrera</label>
+                        <input type="text" id="carrera" placeholder="Ej: Ingeniería de Sistemas">
+                    </div>
+                    <div class="input-group">
+                        <label for="universidad">Universidad</label>
+                        <input type="text" id="universidad" placeholder="Ej: Universidad Nacional">
+                    </div>
+                </div>
+
+                <!-- Campos adicionales para TUTOR -->
+                <div id="tutorFields" style="display: none;">
+                    <div class="input-group">
+                        <label for="especialidad">Especialidad</label>
+                        <input type="text" id="especialidad" placeholder="Ej: Matemáticas">
+                    </div>
+                    <div class="input-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" placeholder="Cuéntanos sobre tu experiencia..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <span>Crear Cuenta</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
